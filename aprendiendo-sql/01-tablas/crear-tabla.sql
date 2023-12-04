@@ -27,8 +27,9 @@ PRIMARY_KEY(clave primaria) -> nos indica que campo es la clave primaria
 
 CREATE TABLE usuarios(
     id          int(11) auto_increment not null,
-    nombre      varchar(100),
-    apellidos   varchar(255),
-    email       varchar(100),
-    password    varchar(255)
+    nombre      varchar(100) not null,
+    apellidos   varchar(255) default 'hola que tal',
+    email       varchar(100) not null,
+    password    varchar(255),
+    CONSTRAINT pk_usuarios PRIMARY KEY(id) 
 );

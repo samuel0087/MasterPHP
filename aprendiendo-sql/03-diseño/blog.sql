@@ -23,6 +23,6 @@ titulo           varchar(255) not null,
 descripcion      MEDIUMTEXT,
 fecha            date not null,
 CONSTRAINT pk_entradas PRIMARY KEY(id),
-CONSTRAINT fk_entradas_usuario FOREIGN KEY(usu_id) REFERENCES ususarios(id),
+CONSTRAINT fk_entradas_usuario FOREIGN KEY(usu_id) REFERENCES usuarios(id),
 CONSTRAINT fk_entradas_categoria FOREIGN KEY(cat_id) REFERENCES categorias(id) 
 )ENGINE=InnoDb;

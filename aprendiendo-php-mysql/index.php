@@ -22,3 +22,14 @@ while($nota = mysqli_fetch_assoc($query)){
     echo '<hr/>' . $nota['titulo'] . ': ' . $nota['descripcion']. '<br/>';
 }
 
+//insertar datos en una base de datos desde PHP
+$sql = 'INSERT INTO notas VALUES (null, "crear pagina de licuados", "Rehacer el ejercicio de licuados de programacion 2", "green")';
+$insert = mysqli_query($conexion, $sql);
+
+if($sql){
+    echo 'Datos guardados exitosamente';
+}
+else{
+    echo 'Error en al guardar datos!!!!! : '. mysqli_error($conexion);
+}
+

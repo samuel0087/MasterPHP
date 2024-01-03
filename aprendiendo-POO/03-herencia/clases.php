@@ -65,6 +65,7 @@ class Informatico extends Persona{
     
     public function __construct($lenguajes = Array('PHP', 'JS', 'CSS')){
         parent::__construct();
+        
         $this->lenguajes = $lenguajes;
     }
     

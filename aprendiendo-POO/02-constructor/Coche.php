@@ -3,12 +3,12 @@
 class Coche{
     
     //Atributos / propiedades (variables)
-    private $color = 'Rojo';
-    private $marca = 'Ford';
-    private $modelo = 'Taunus Coupe GT SP';
-    private $velocidad = 0;
-    private $cilindrada = 2.3;
-    private $anio_fabricacion = 1981;
+    private $color;
+    private $marca;
+    private $modelo ;
+    private $velocidad;
+    private $cilindrada;
+    private $anio_fabricacion;
     
     //constructor
     public function __construct($color = '', $marca = '', $modelo = '', $velocidad = 0, $cilindrada = 0, $anio = 0) {
@@ -73,6 +73,16 @@ class Coche{
     
     public function getAnioFabricacion(){
         return $this->anio_fabricacion;
+    }
+    
+    public function getInformacion(){
+        $info = '<h1>Informacion del veiculo</h1>';
+        $info .= 'Marca: ' . $this->marca .'</br>';
+        $info .= 'Modelo: ' . $this->modelo.'</br>';
+        $info .= 'Cilindrada: ' . $this->cilindrada.'</br>';
+        $info .= 'Año: ' . $this->anio_fabricacion;
+                
+        return $info;
     }
     
 }

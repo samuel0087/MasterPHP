@@ -4,9 +4,8 @@ require_once 'autoload.php';
 
 if(isset($_GET['controller'])){
     $nombreClase = $_GET['controller'].'Controller';
-}
-
-if(class_exists($_GET['controller'])){
+    
+    if(class_exists($nombreClase)){
     
     $controller = new $nombreClase();
     
@@ -21,3 +20,6 @@ if(class_exists($_GET['controller'])){
 else{
     echo "La pagina no existe";
 }
+
+}
+

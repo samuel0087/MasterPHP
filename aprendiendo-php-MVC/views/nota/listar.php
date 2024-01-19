@@ -1,2 +1,5 @@
-<h1><?=$nota->getNombre()?></h1>
-<h3><?=$nota->getDescripcion()?></h3>
+<h1> Holaaaaaaa Mostrando Notas...</h1>
+
+<?php while($nota = $notas->fetch_object()): ?>
+    <?=$nota->titulo?> - <?=$nota->fecha?><br/>
+<?php endwhile ?>

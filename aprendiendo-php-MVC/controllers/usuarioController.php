@@ -3,10 +3,11 @@
 require_once 'models/usuario.php';
 
 class UsuarioController{
+
     public function mostrarTodos(){
         
         $usuario = new Usuario();
-        $todosLosUsuarios = $usuario->getAllUsers();
+        $todosLosUsuarios = $usuario->getAll('usuarios');
         
         require_once 'views/usuario/mostrarTodos.php';
     }

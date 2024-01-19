@@ -1,6 +1,8 @@
 <?php
 
-class Usuario{
+require_once 'ModeloBase.php';
+
+class Usuario extends ModeloBase{
     private $nombre;
     private $apellido;
     private $email;
@@ -11,6 +13,8 @@ class Usuario{
         $this->apellido = $surname;
         $this->email = $email;
         $this->password = $pass;
+
+        parent::__construct();
     }
     
     public function getNombre() {
@@ -45,10 +49,5 @@ class Usuario{
         $this->password = $password;
     }
     
-    public function getAllUsers() {
-        return "Todos mis usuarios";
-    }
-
-
 }
 

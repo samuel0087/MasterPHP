@@ -1,0 +1,234 @@
+*{
+    margin:0;
+    padding: 0;
+    text-decoration:none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image:url('../img/fondo.jpg');
+    background-size:550px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+div{
+    display:block;
+}
+.clearfix{
+    overflow: hidden;
+    height: auto;
+}
+
+#superior{
+    background: #ce1c1c;
+    width: 100%;
+    margin: 0 auto;
+    height: 40px;
+    border-radius: 20px 20px 0 0;
+}
+
+#login{
+    float: right;
+    margin-right: 30px;
+    width: 625px;
+}
+
+#login a, #login span{
+    display:block;
+    padding: 0 5px;
+    color: white;
+    float: left;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+#login a:hover{
+    text-decoration:underline;
+}
+
+#login form{
+    margin: 0;
+}
+
+#login form input{
+    float: left;
+    margin: 5px;
+    border: 1px solid #d7d5d5;
+    height: 30px; 
+    border-radius: 5px;  
+    overflow: hidden; 
+    text-align: center;
+    line-height: 30px;
+}
+
+#login form input:focus{
+    border: 1px solid hsl(204, 100%, 48%);
+}
+
+#login form input[type="submit"]{
+    background: #007ee5;
+    border:none;
+    width: 60px;
+    color: white;
+}
+#login form input[type="submit"]:hover{
+    background: #0065b8;
+}
+
+.header{
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+
+}
+
+#logo{
+    height: 80px;
+    margin: 0 auto;
+}
+.header a{
+    margin: 0 auto;
+}
+
+#logo{
+    margin: 0 auto;
+    height: 100%;
+    width: 300px
+}
+
+#logo img{
+    height: 70px;
+    float: left;
+    margin: 15px;
+}
+
+#logo span{
+    display: block;
+    font-size: 50px;
+    color: #231f20;
+    font-family: 'Bangers', cursive;
+    margin-left: 40px;
+    text-shadow: 2px 1px 5px #ccc, 2px 3px 5px #666;
+}
+
+.nav{
+    background:#ce1c1c;
+    width: 100%;
+    border-radius:  0 0 20px 20px;
+}
+
+.nav ul{
+    list-style: none;
+    overflow: hidden;
+}
+
+.nav ul li{
+    border-right: 1px solid rgb(158, 9, 9);
+    float: left;
+}
+
+.nav ul li a{
+    display: inline-block;  
+    padding: 10px;
+    color: white;
+    font-size:15px;
+}
+
+.nav ul li a:hover{
+    background:  rgb(158, 9, 9);
+}
+
+#container{
+    margin: 50px 0;
+}
+
+.aside{
+    float:right;
+    width: 260px;
+    margin-left: 30px;
+}
+
+.content-aside{
+    width: 100%;
+    background: white;
+    border-radius:20px;
+    overflow: hidden;
+}
+
+.content-aside h2{
+    width:100%;
+    background: #ce1c1c;
+    color: white;
+    font-size:30px;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    text-shadow: 1px 1px 1px black, 0px 1px 2px #1a1a1a,1px 1px 2px #141414;
+    font-weight: normal;
+}
+
+#categorias{
+    margin: auto;
+    width: 150px;
+    list-style: none;
+}
+
+#categorias ul li{
+    display: block;
+    margin: 2px;
+}
+
+#categorias ul li a{
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 2px;
+    color: black;
+    font-size: 17px;
+}
+
+#categorias ul li a:hover{
+    font-weight: bold;
+    color:#ce1c1c ;
+}
+
+
+#main{
+    background: white;
+    width: 770px;
+    border-radius:20px;
+    overflow: hidden;
+}
+
+#main h1{
+    width:100%;
+    background: #ce1c1c;
+    color: white;
+    font-size:30px;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    text-shadow: 1px 1px 1px black, 0px 1px 2px #1a1a1a,1px 1px 2px #141414;
+    font-weight: normal;
+}
+
+#main article{
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+}
+
+#main article h2{
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 20px 20px 0 0;
+    background: #000;
+    color: white;
+}
+
+

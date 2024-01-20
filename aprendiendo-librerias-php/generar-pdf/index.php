@@ -4,9 +4,13 @@ require_once '../vendor/autoload.php';
 
 use Spipu\Html2Pdf\Html2Pdf;
 
-$html = "<h1>Hola mundo!</h1>";
-$html .= "<h5>No es una web, es un PDF!</h5>";
-
 $pdf = new Html2Pdf();
+
+//recoger vista para imprimir
+ob_start();
+require_once 'generar.php';
+$html = ob_get_clean();
+
+
 $pdf->writeHTML($html);
-$pdf->output("Hola mundo.pdf");
+$pdf->output("Hola_mundo.pdf");

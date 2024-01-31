@@ -208,6 +208,16 @@ nav {
     place-content: center;
     padding: 20px;
   }
+  
+  #contenido h2{
+      display: inline;
+      text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--very-light-pink);
+  }
+  
   .product-card {
     width: 240px;
     border: 1px solid #cccccc;

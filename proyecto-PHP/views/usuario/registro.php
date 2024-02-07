@@ -1,8 +1,22 @@
 <div class="login">
     <div class="form-container">
       <h2 class="title">Registro de usuario</h2>
+      
+      <?php if(isset($_SESSION['register']) && $_SESSION['register']): ?>
+      
+        <h2 class="ok">Se guardo usuario</h2>
+      
+      <?php elseif(isset($_SESSION['register']) && !$_SESSION['register']): ?>
+      
+        <h2 class="error">NO SE guardo usuario, llenar correctamente los datos por favor.</h2>
+      
+      <?php endif;?>
+        
+        <?php Utils::deleteSession('register')?>
+      
+      
 
-      <form action="index.php?controller=Usuario&action=save" method="POST" class="form form-registro">
+      <form action="<?=base_url?>Usuario/save" method="POST" class="form form-registro">
           <label for="name" class="label">Nombre</label>
           <input type="text" name="name" placeholder="Nombre" class="input input-usu">
           

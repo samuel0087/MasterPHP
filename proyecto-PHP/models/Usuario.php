@@ -17,7 +17,7 @@ class Usuario{
         $this->nombre = $name;
         $this->apellidos = $surname;
         $this->email = $email;
-        $this->password= $password;
+        $this->password= password_hash($this->db->real_escape_string($password), PASSWORD_BCRYPT, ['cost' => 4]);
         $this->rol = "";
         $this->image = "";
     }

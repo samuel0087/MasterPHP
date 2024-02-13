@@ -1,4 +1,4 @@
-<div class="login">
+<div class="create">
     <div class="form-container">
       <h2 class="title">Registro de usuario</h2>
       
@@ -31,7 +31,7 @@
           <label for="password" class="label">Password</label>
           <input type="password" name="password" placeholder="*********" class="input input-password">
 
-        <input type="submit" value="Create" class="primary-button login-button">
+        <input type="submit" value="Create" class="primary-button login-button botton-sam">
       </form>
     </div>
   </div>

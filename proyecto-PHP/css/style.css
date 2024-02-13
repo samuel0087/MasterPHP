@@ -205,6 +205,17 @@ nav {
     margin-bottom: 30px;
     transition: 300ms;
 }
+
+.botton-sam{
+    display: block!important;
+    width: fit-content!important;
+    min-width: 130px;
+    line-height: 50px;
+    padding: 0px 10px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
 .login-button:hover{
     background-color: #5d7e61;
 }
@@ -219,10 +230,31 @@ nav {
     width: 70%;
     border-radius: 5px;
     box-shadow: 0px 0px 4px var(--very-light-pink);
+    padding: 20px;
+}
+
+.grilla{
     display: grid;
     gap: 26px;
     place-content: center;
-    padding: 20px;
+    grid-template-columns: auto auto auto;
+}
+
+.tabla{
+    border: 1px solid black;
+    width: 400px;
+    margin: 20px auto;
+}
+
+.tabla tr th{
+    background: var(--hospital-green);
+    font-weight: bold;
+}
+
+.tabla tr td{
+    text-align: center;
+   border-top:  1px solid black;
+   padding: 3px;
 }
 
 .login {
@@ -231,13 +263,18 @@ nav {
     place-items: center;
 }
 
+.create{
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
 #contenido .form-container h2{
     display: block;
     margin-bottom: 40px!important;
 }
 
 #contenido h2{
-    display: inline;
     text-align: center;
     grid-column-start: 1;
     grid-column-end: 4;
@@ -284,10 +321,12 @@ nav {
 }
 
 footer{
+    width: 100%;
     height: 100px;
     background-color: #5d7e61;
     color: white;
     text-align: center;
+
 }
 
 footer p{

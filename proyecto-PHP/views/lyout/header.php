@@ -24,11 +24,16 @@
 
         <div class="wrap navbar-left">
             <ul>
-                <li><a href="#">COSA 1</a></li>
-                <li><a href="#">COSA 2</a></li>
-                <li><a href="#">COSA 3</a></li>
-                <li><a href="#">COSA 4</a></li>
-                <li><a href="#">COSA 5</a></li>
+                <li><a href="<?=base_url?>">Inicio</a></li>
+                
+                <?php $categorias = Utils::showCategorias() ?>
+                <?php while($cat = $categorias->fetch_object()): ?>
+                
+                    <li><a href="#"><?=$cat->nombre?></a></li>
+                    
+                <?php endwhile; ?>
+                
+                
             </ul>
         </div>
     </nav>

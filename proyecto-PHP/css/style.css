@@ -159,20 +159,31 @@ nav {
     font-weight: bold;
     margin-bottom: 4px;
 }
-.input {
+.input, textarea {
     background-color: var(--text-input-field);
     border: none;
     border-radius: 8px;
-    height: 30px;
+    height: 35px;
     font-size: var(--md);
     padding: 6px;
     margin-bottom: 12px;
     outline: none;
     transition: 300ms;
 }
-.input:focus{
+.input:focus, textarea:focus{
 
     box-shadow: 0px 0px 3px #5d7e61;
+}
+
+textarea{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 70px;
+    max-height: 90px;
+}
+
+select{
+    padding: 0px 6px!important;
 }
 
 .input-usu {
@@ -242,13 +253,14 @@ nav {
 
 .tabla{
     border: 1px solid black;
-    width: 400px;
+    width: 70%;
     margin: 20px auto;
 }
 
 .tabla tr th{
     background: var(--hospital-green);
     font-weight: bold;
+    padding: 0px 5px;
 }
 
 .tabla tr td{

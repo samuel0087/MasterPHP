@@ -36,6 +36,28 @@
     font-weight: bold;
 }
 
+.vista-previa{
+    margin-bottom: 20px;
+}
+
+.edit-button{
+    background: #0064ff!important;
+    padding:5px;
+}
+
+.edit-button:hover{
+    background: #003890!important;
+}
+
+.delete-button{
+    background: red!important;
+    padding:5px;
+}
+
+.delete-button:hover{
+    background: #b80000!important;
+}
+
 /*cabeceta*/
 header{
     height: 120px;
@@ -199,6 +221,7 @@ select{
     font-size: var(--md);
     font-weight: bold;
     height: 50px;
+    transition: 300ms;
 }
 .secondary-button {
     background-color: var(--white);
@@ -266,7 +289,7 @@ select{
 .tabla tr td{
     text-align: center;
    border-top:  1px solid black;
-   padding: 3px;
+   height: 40px;
 }
 
 .login {
@@ -299,18 +322,23 @@ select{
     width: 240px;
     border: 1px solid #cccccc;
     border-radius: 5px;
+    overflow: hidden;
 }
 .product-card > img {
     width: 240px;
     height: 240px;
     border-bottom: 1px solid #cccccc;
-    object-fit: cover;
+    object-fit: contain;
 }
 .product-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
+}
+
+.product-info div p{
+    padding-left: 5px;
 }
 .product-info figure {
     margin: 0;
@@ -328,7 +356,7 @@ select{
 .product-info div p:nth-child(2) {
     font-size: var(--sm);
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 4px;
     color: var(--very-light-pink);
 }
 

@@ -86,13 +86,68 @@ class Producto{
     }
 
     public function setImage($image) {
-        $this->image = $image;
+        $this->image = $this->db->real_escape_string($image);
     }
     
     public function getAll(){
         $sql = "SELECT * FROM productos ORDER BY id DESC";
         $result = $this->db->query($sql);
         
+        return $result;
+    }
+    
+    public function getRandom($limit){
+        $sql = "SELECT * FROM productos ORDER BY RAND() LIMIT {$limit}";
+        $result = $this->db->query($sql);
+        
+        return $result;
+    }
+    
+    public function getProducto(){
+        $sql = "SELECT * FROM productos WHERE id = {$this->id}";
+        $product = $this->db->query($sql);
+        
+        return $product->fetch_object();
+    }
+    
+    public function getAllCategory(){
+        $sql = "SELECT p.*, c.nombre FROM productos p "
+                ."INNER JOIN categorias c ON c.id = p.categoria_id "
+                ."WHERE p.categoria_id = {$this->categoria_id} "
+                . "ORDER BY id DESC;";
+                
+        $result = $this->db->query($sql);
+
+        return $result;
+        
+    }
+
+
+    public function save(){
+        $sql = "INSERT INTO productos VALUES(NULL,{$this->categoria_id},'{$this->nombre}', '{$this->descripcion}', {$this->precio}, {$this->stock}, NULL, CURDATE(), '{$this->image}');";
+        $result = $this->db->query($sql);
+    
+        return $result;
+    }
+    
+    public function delete(){
+        $sql = "DELETE FROM productos WHERE id = {$this->id}";
+        $result = $this->db->query($sql);
+
+        return $result;
+    }
+    
+    public function edit(){
+         $sql = "UPDATE productos SET categoria_id={$this->categoria_id}, nombre='{$this->nombre}', descripcion='{$this->descripcion}', precio={$this->precio}, stock={$this->stock}";
+         
+         if($this->image != null){
+            $sql .= ", imagen= '{$this->image}'";
+         }
+         
+         $sql .= " WHERE id={$this->id};";
+         
+        $result = $this->db->query($sql);
+    
         return $result;
     }
 

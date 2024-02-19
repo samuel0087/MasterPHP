@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Tienda de caisetas</title>
     <link rel="shortcut icon" href="<?=base_url?>img/camista.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
                 <?php $categorias = Utils::showCategorias() ?>
                 <?php while($cat = $categorias->fetch_object()): ?>
                 
-                    <li><a href="#"><?=$cat->nombre?></a></li>
+                    <li><a href="<?=base_url?>Categoria/ver&id=<?=$cat->id?>"><?=$cat->nombre?></a></li>
                     
                 <?php endwhile; ?>
                 

@@ -37,7 +37,7 @@ class UsuarioController {
             $_SESSION['register'] = false;
         }
 
-        header("Location:" . base_url . "/Usuario/registro");
+        header("Location:" . base_url . "Usuario/registro");
     }
     
     public function login(){

@@ -45,7 +45,6 @@ class ProductoController{
                 $producto->setDescripcion($descripcion);
                 $producto->setStock($stock);
                 $producto->setPrecio($precio);
-              
 
                 //guardar imagen
                 if(isset($_FILES['image'])){
@@ -57,9 +56,8 @@ class ProductoController{
                         if(!is_dir('uploads/img')){
                             mkdir('uploads/img', 0777, true);
                         }
-
+                        
                         move_uploaded_file($file['tmp_name'],'uploads/img/' . $fileName); // ruta en donde de guarda
-
                         $producto->setImage($fileName);
                     }
                     else{
@@ -73,7 +71,6 @@ class ProductoController{
                 if(isset($_GET['id'])){
                     $producto->setId($_GET['id']);
                     $result = $producto->edit();
-
                 }
                 else{
                     $result = $producto->save();
@@ -104,7 +101,7 @@ class ProductoController{
             }
         }
         
-         header('Location:' . base_url . 'Producto/gestion');
+        header('Location:' . base_url . 'Producto/gestion');
     }
     
     public function edit(){
@@ -120,6 +117,18 @@ class ProductoController{
             require_once 'views/producto/crear.php';
         }
         
+    }
+
+    public function ver(){
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            
+            $producto = new Producto();
+            $producto->setId($id);
+            $product = $producto->getProducto();
+        }
+        
+        require_once 'views/producto/ver.php';
     }
     
 }

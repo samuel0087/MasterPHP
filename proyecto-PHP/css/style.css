@@ -18,6 +18,7 @@
     text-decoration: none;
 }
 
+
 .wrap{
     max-width: 1200px;
     width: 100%;
@@ -250,7 +251,8 @@ select{
     margin-bottom: 20px;
 }
 
-.login-button:hover{
+.login-button:hover,
+.botton-sam:hover{
     background-color: #5d7e61;
 }
 
@@ -258,6 +260,12 @@ select{
 .form-registro input{
     display: block;
     width: 100%;
+}
+
+aside,
+main{
+    background-color: #fafafa;
+
 }
 
 #contenido {
@@ -339,6 +347,7 @@ select{
 
 .product-info div p{
     padding-left: 5px;
+    color: var(--text-input-field);
 }
 .product-info figure {
     margin: 0;

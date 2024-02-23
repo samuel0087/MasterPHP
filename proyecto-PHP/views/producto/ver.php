@@ -16,7 +16,7 @@
             <span>Stock</span>
             <p class="box ulti" >stock: <?=$product->stock?></p>
             
-            <a href="" class="primary-button botton-sam">Agregar al carrito</a>
+            <a href="<?=base_url?>Carrito/add&id=<?=$product->id?>" class="primary-button botton-sam">Agregar al carrito</a>
         </div>
     </div>
 

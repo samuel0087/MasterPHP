@@ -148,6 +148,13 @@ nav {
     padding: 5px 10px;
 }
 
+.principal #lateral div{
+    padding: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--black);
+}
+
+
 .principal #lateral h3{
     display: block;
     width: 100%;
@@ -156,6 +163,7 @@ nav {
     text-align: center;
     color: var(--black);
     font-size: 22px;
+    border-bottom: 1px solid var(--black);
 }
 
 .form,
@@ -425,6 +433,11 @@ main{
 .detalle .desc-producto .ulti{
     margin-bottom: 20px;
     width: fit-content;
+}
+
+.img-carrito{
+    width: 100px;
+    margin: 10px auto; 
 }
 
 footer{

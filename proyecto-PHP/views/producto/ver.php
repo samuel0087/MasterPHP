@@ -1,12 +1,20 @@
 <?php if(isset($product) && is_object($product)): ?>
-    <h2 class="title"><?=$product->nombre?></h2>
+    <h2 class="title">Detalle del producto</h2>
 
     <div class="detalle">
-        <div class="imagen-producto">
+        <div class="desc-img">
             <img src="<?=base_url?>uploads/img/<?=$product->imagen?>" alt="<?=$product->imagen?>"/>
-            <span class="precio-producto">$<?=$product->precio?></span>
-            <p class="descripcion-producto"><?=$product->descripcion?></p>
-            <p class="stock-producto">stock: <?=$product->stock?></p>
+        </div>
+        
+        <div class="desc-producto">
+            <h3 class="title title-producto"><?=$product->nombre?></h3>
+            <p class="title title-producto">$<?=$product->precio?></p>
+
+            <span>Detalle:</span>
+            <p  class="box" ><?=$product->descripcion?></p>
+
+            <span>Stock</span>
+            <p class="box ulti" >stock: <?=$product->stock?></p>
             
             <a href="" class="primary-button botton-sam">Agregar al carrito</a>
         </div>

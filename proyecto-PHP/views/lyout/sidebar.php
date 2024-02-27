@@ -1,8 +1,11 @@
 <aside id="lateral">
 
     <?php if(isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])): ?>
+        <?php $stats = Utils::statsCarrito() ?>
         <div class="carrito-info">
             <h3 id="title-aside">Carrito de compras</h3>
+            <a href="#">Productos(<?=$stats['cantidadProductos']?>)</a>
+            <a href="#">Total: $<?=$stats['precioTotal']?></a>
             <a href="<?=base_url?>Carrito/index">Ver carrito</a>
         </div>
     <?php endif; ?>

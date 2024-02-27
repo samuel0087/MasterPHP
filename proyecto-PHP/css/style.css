@@ -296,7 +296,8 @@ main{
     margin: 20px auto;
 }
 
-.tabla tr th{
+.tabla tr th,
+.tablett{
     background: var(--hospital-green);
     font-weight: bold;
     padding: 0px 5px;

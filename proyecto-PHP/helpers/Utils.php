@@ -26,4 +26,21 @@ class Utils{
         
         return $result;
     }
+
+    public static function statsCarrito(){
+        $stats = array(
+            "precioTotal" => 0,
+            "cantidadProductos" => 0
+        );
+
+        if(isset($_SESSION['carrito'])){
+            $stats['cantidadProductos'] = count($_SESSION['carrito']);
+
+            foreach($_SESSION['carrito'] as $product){
+                $stats['precioTotal'] += $product['precio'] * $product['cantidad'];
+            }
+        }
+
+        return $stats;
+    }
 }

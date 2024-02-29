@@ -21,7 +21,7 @@
             <?php endif; ?>
             <?php Utils::deleteSession('login') ?>
 
-            <form action="<?= base_url ?>Usuario/login" method="POST" class="form">
+            <form action="<?=base_url?>Usuario/login" method="POST" class="form">
                 <label for="Email">Email</label>
                 <input type="text" name="email" id="usuario" class="input input-usu" placeholder="Usuario" />
                 <label for="pass">Password</label>
@@ -35,15 +35,15 @@
 
         <?php if (isset($_SESSION['admin'])) : ?>
             <a href="#">Gestionar pedidos</a>
-            <a href="<?= base_url ?>Producto/gestion">Gestionar productos</a>
-            <a href="<?= base_url ?>Categoria/index">Gestionar categorias</a>
+            <a href="<?=base_url?>Producto/gestion">Gestionar productos</a>
+            <a href="<?=base_url?>Categoria/index">Gestionar categorias</a>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['identity'])) : ?>
             <a href="#">Mis pedidos</a>
-            <a href="<?= base_url ?>Usuario/logout">Cerrar sesion</a>
+            <a href="<?=base_url?>Usuario/logout">Cerrar sesion</a>
         <?php else : ?>
-            <a href="<?= base_url ?>Usuario/registro">Registrarse</a>
+            <a href="<?=base_url?>Usuario/registro">Registrarse</a>
         <?php endif; ?>
     </div>
 

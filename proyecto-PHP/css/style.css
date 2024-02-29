@@ -59,6 +59,10 @@
     background: #b80000!important;
 }
 
+.subtitle{
+    margin-bottom: 20px;
+}
+
 /*cabeceta*/
 header{
     height: 120px;
@@ -166,12 +170,14 @@ nav {
     border-bottom: 1px solid var(--black);
 }
 
+
+
 .form,
 .form div{
     display: flex;
     flex-direction: column;
 }
-#lateral a {
+#lateral a, .link {
     display: block;
     color: var(--hospital-green);
     font-size: var(--md);
@@ -179,6 +185,10 @@ nav {
     text-decoration: none;
     margin-bottom: 2px;
     transition: 300ms;
+}
+
+.link{
+    margin-bottom: 20px;
 }
 
 #lateral a:hover {

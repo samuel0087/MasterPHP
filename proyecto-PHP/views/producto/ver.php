@@ -21,5 +21,5 @@
     </div>
 
 <?php else: ?>
-    <h2 class="title">No existe este roducto</h2>
+    <h2 class="title">No existe este producto</h2>
 <?php endif; ?>

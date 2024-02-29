@@ -30,7 +30,7 @@
         </tr>
     </table>
 
-    <a href="#" class="primary-button botton-sam login-button">Realizar pedido</a>
+    <a href="<?=base_url?>Pedido/realizar" class="primary-button botton-sam login-button">Realizar pedido</a>
 <?php else: ?>
         <h2 class="error">Carrito de compras vacio</h2>
 <?php endif; ?>

@@ -21,7 +21,6 @@ class UsuarioController {
             $password = isset($_POST['password']) ? $_POST['password'] : false;
 
             if ($nombre && $apellidos && $email && $password) {
-
                 $usuario = new Usuario($nombre, $apellidos, $email, $password);
                 $status = $usuario->save();
 

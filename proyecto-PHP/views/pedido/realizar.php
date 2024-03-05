@@ -6,7 +6,7 @@
     <div class="create">
         <h3 class="subtitle">Direccion del pedido</h3>
         <form action="<?=base_url?>Pedido/add" method="POST" class="form form-registro">
-            <label for="provincia" class="label">Nombre</label>
+            <label for="provincia" class="label">Provincia</label>
             <input type="text" name="provincia" placeholder="Ej: Buenos Aires" class="input input-usu">
 
             <label for="ciudad" class="label">Ciudad</label>

@@ -101,7 +101,8 @@ class Usuario{
         if($login && $login->num_rows == 1){
             $usuario = $login->fetch_object();
             
-            $verify = password_verify($password, $usuario->password);         
+            $verify = password_verify($password, $usuario->password);    
+                
             
             if($verify){
                 $result = $usuario;

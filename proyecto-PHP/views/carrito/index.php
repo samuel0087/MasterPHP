@@ -14,7 +14,7 @@
             <?php $product = $elemento['producto'];  ?>
             <tr>
                 <td><img class="img-carrito" src="<?=base_url?>uploads/img/<?=$product->imagen?>" alt=""></td>
-                <td><?=$product->nombre?></td>
+                <td><a href="<?=base_url?>Producto/ver&id=<?=$product->id?>"><?=$product->nombre?></a></td>
                 <td>$<?=$product->precio?></td>
                 <td><?=$elemento['cantidad']?></td>  
             </tr> 

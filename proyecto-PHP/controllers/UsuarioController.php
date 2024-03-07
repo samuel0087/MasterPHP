@@ -46,8 +46,9 @@ class UsuarioController {
             $user->setPassword($_POST['password']);
             
             $userMaster = $user->login();
-            
+
             if($userMaster && is_object($userMaster)){
+                
                 $_SESSION['identity'] = $userMaster;
 
                 if($userMaster->rol == 'admin'){
@@ -57,10 +58,13 @@ class UsuarioController {
             }
             else{
                 $_SESSION['login'] = false;
-            }
-            
+            }     
         }
-        header("Location:" . base_url);
+        else{
+            $_SESSION['login'] = false;
+        }
+
+        header('Location:' . base_url .'Producto/destacados');
     }
     
     public function logout(){
@@ -74,7 +78,7 @@ class UsuarioController {
 
         
         
-        header('Location:'.base_url.'Producto/destacados'); 
+        header('Location:' . base_url .'Producto/destacados'); 
     }
 
 }

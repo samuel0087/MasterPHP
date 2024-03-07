@@ -9,6 +9,8 @@ class PedidoController{
 
     public function add(){
         if(isset($_SESSION['identity'])){
+            $_SESSION['encargo'] = false;
+
             if(isset($_POST)){
 
                 $usuario_id = $_SESSION['identity']->id;
@@ -28,11 +30,54 @@ class PedidoController{
                    $pedido->setDireccion($calle);
                    $pedido->setCosto($total);
                    
-                   var_dump($pedido);
-                   die();
+                   $result = $pedido->save();
+
+                   //guardar en lineas pedidos
+                   $result_lineas = $pedido->save_lineas();
+
+                   if($result && $result_lineas){
+                    $_SESSION['encargo'] = true;
+                   }
+
+                }
+                else{
+                    $_SESSION['encargo'] = false;    
                 }
             }
+            else{
+                $_SESSION['encargo'] = false;
+            }
+
+            header('Location:' . base_url . 'Pedido/confirmado');
+
         }
+        else{
+            header('Location:' . base_url);
+        }      
+    }
+
+    public function confirmado(){
+        if(isset($_SESSION['identity'])){
+            $identity = $_SESSION['identity'];
+            $pedid = new Pedido();
+            $pedid->setUsuario_id($identity->id);
+
+            $pedido = $pedid->getPedidoByUser();
+
+            $pedido_products = new Pedido();
+            $productos = $pedido_products->getProductosByPedido($pedido->id);
+        }
+        require_once 'views/pedido/confirmado.php';
+    }
+
+    public function mis_pedidos(){
+        Utils::isIdentity();
+
+        $pedido = new Pedido();
+        $pedido->setUsuario_id($_SESSION['identity']->id);
+        $pedidos = $pedido->getAllPedidosByUser();
+
         
+        require_once 'views/pedido/mis_pedidos.php';
     }
 }

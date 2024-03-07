@@ -62,11 +62,11 @@ class Pedido{
     }
 
     public function setLocalidad($localidad){
-        $this->localidad = $localidad;
+        $this->localidad = $this->db->real_escape_string($localidad);
     }
 
     public function setDireccion($direccion) {
-        $this->direccion = $direccion;
+        $this->direccion = $this->db->real_escape_string($direccion);
     }
 
     public function setCosto($costo) {
@@ -85,27 +85,74 @@ class Pedido{
         $this->hora = $hora;
     }
 
-        
-
     public function __construct(){
         $this->db = Database::connect();
     }
 
     
     public function getAll(){
-        $sql = "SELECT * FROM productos ORDER BY id DESC";
+        $sql = "SELECT * FROM pedidos ORDER BY id DESC";
         $result = $this->db->query($sql);
         
         return $result;
     }
+
+    public function getPedidoByUser(){
+        $sql = "SELECT p.id, p.costo FROM pedidos p "
+                ."INNER JOIN lineas_pedido lp ON lp.pedido_id = p.id "
+                ."WHERE p.usuario_id = {$this->usuario_id} ORDER BY id DESC LIMIT 1";
+        
+        $pedido = $this->db->query($sql);
+
+        return $pedido->fetch_object();
+    }
+
+    public function getAllPedidosByUser(){
+        $sql = "SELECT p.* FROM pedidos p "
+                ."WHERE p.usuario_id = {$this->usuario_id} ORDER BY id DESC ";
+        
+        $pedido = $this->db->query($sql);
+
+        return $pedido;
+    }
+
+    public function getProductosByPedido($pedido_id){
+        $sql = "SELECT pr.*, lp.unidades FROM productos pr "
+                ."INNER JOIN lineas_pedido lp ON lp.producto_id = pr.id "
+                ."WHERE lp.pedido_id = {$pedido_id}";
+        
+        $productos = $this->db->query($sql);
+
+        return $productos;
+    }
     
-
-
 
     public function save(){
-        $sql = "INSERT INTO pedidos VALUES(NULL,{$this->usuario_id},'{$this->provincia}', '{$this->localidad}', {$this->direccion}, {$this->costo}, 'Confirm', CURDATE(), CURTIME());";
+        $sql = "INSERT INTO pedidos VALUES(NULL,{$this->usuario_id},'{$this->provincia}', '{$this->localidad}',' {$this->direccion}', {$this->costo}, 'Confirm', CURDATE(), CURTIME());";
         $result = $this->db->query($sql);
     
+        return $result;
+    }
+
+    public function save_lineas(){
+        $sql = "SELECT LAST_INSERT_ID() as 'pedidos';";
+        $query = $this->db->query($sql);
+        $pedido_id = $query->fetch_object()->pedidos;
+        
+        foreach($_SESSION['carrito'] as $elemento){
+            $product = $elemento['producto'];            
+
+            $insert = "INSERT INTO lineas_pedido VALUES(NULL, {$pedido_id}, {$product->id}, {$elemento['cantidad']});";
+            $save_lineas = $this->db->query($insert);
+        }
+
+        
+
+        $result = false;
+        if($save_lineas){
+           $result = true; 
+        }
+
         return $result;
     }
 

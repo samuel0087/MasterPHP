@@ -3,6 +3,11 @@
 
     <a href="<?=base_url?>Carrito/index" class="link">Ver productos del carrito</a>
 
+    <?php if(isset($_SESSION['encargo']) && !$_SESSION['encargo']):?>
+        <h2 class="error">Error al cargar la direccion</h2>
+    <?php endif;?>
+    <?php Utils::deleteSession('encargo')?>
+
     <div class="create">
         <h3 class="subtitle">Direccion del pedido</h3>
         <form action="<?=base_url?>Pedido/add" method="POST" class="form form-registro">

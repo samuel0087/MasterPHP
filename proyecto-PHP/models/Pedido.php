@@ -97,6 +97,13 @@ class Pedido{
         return $result;
     }
 
+    public function getPedido(){
+        $sql = "SELECT * FROM pedidos WHERE id = {$this->id};";
+        $result = $this->db->query($sql);
+
+        return $result->fetch_object();
+    }
+
     public function getPedidoByUser(){
         $sql = "SELECT p.id, p.costo FROM pedidos p "
                 ."INNER JOIN lineas_pedido lp ON lp.pedido_id = p.id "

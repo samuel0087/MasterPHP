@@ -77,7 +77,25 @@ class PedidoController{
         $pedido->setUsuario_id($_SESSION['identity']->id);
         $pedidos = $pedido->getAllPedidosByUser();
 
-        
+
         require_once 'views/pedido/mis_pedidos.php';
+    }
+
+    public function detalle(){
+        Utils::isIdentity();
+
+        if(isset($_GET['id'])){
+            $pedido_id = $_GET['id'];
+            $ped = new Pedido();
+            $ped->setId($pedido_id);
+
+            $pedido = $ped->getPedido(); // seguir para sacar el pedido
+
+            
+            $pedido_products = new Pedido();
+            $productos = $pedido_products->getProductosByPedido($pedido->id);
+        }
+
+        require_once 'views/pedido/detalle.php';
     }
 }

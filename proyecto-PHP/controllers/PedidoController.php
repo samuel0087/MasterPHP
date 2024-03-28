@@ -66,6 +66,8 @@ class PedidoController{
 
             $pedido_products = new Pedido();
             $productos = $pedido_products->getProductosByPedido($pedido->id);
+
+            Utils::deleteSession('carrito');
         }
         require_once 'views/pedido/confirmado.php';
     }
@@ -91,11 +93,40 @@ class PedidoController{
 
             $pedido = $ped->getPedido(); // seguir para sacar el pedido
 
-            
+
             $pedido_products = new Pedido();
             $productos = $pedido_products->getProductosByPedido($pedido->id);
         }
 
         require_once 'views/pedido/detalle.php';
+    }
+
+    //crear la vista de gestion de pedidos
+
+    public function gestion(){
+        Utils::isAdmin();
+        $gestion = true;
+
+        $pedido = new Pedido();
+        $pedidos = $pedido->getAll();
+
+        require_once 'views/pedido/mis_pedidos.php';
+    }
+
+    public function estado(){
+        Utils::isAdmin();
+
+        if(isset($_POST['estado']) && isset($_POST['estado'])){
+            $pedido = new Pedido();
+            $pedido->setId($_POST['pedido_id']);
+            $pedido->setEstado($_POST['estado']);
+
+            $result = $pedido->edit();
+
+            header('Location:' . base_url . 'Pedido/detalle&id=' . $pedido->getId());
+        }
+        else{
+            header('Location:' . base_url);
+        }
     }
 }

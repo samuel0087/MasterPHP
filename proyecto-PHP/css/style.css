@@ -37,6 +37,15 @@
     font-weight: bold;
 }
 
+.action {
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.actionB{
+    padding: 2px 10px;
+}
+
 .vista-previa{
     margin-bottom: 20px;
 }
@@ -53,6 +62,9 @@
 .delete-button{
     background: red!important;
     padding:5px;
+    border-radius: 8px;
+    border: none;
+    color: white;
 }
 
 .delete-button:hover{
@@ -274,7 +286,8 @@ select{
 }
 
 .login-button:hover,
-.botton-sam:hover{
+.botton-sam:hover,
+.actionB:hover{
     background-color: #5d7e61;
 }
 

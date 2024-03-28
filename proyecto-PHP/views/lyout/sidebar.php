@@ -34,7 +34,7 @@
         <?php endif; ?>
 
         <?php if (isset($_SESSION['admin'])) : ?>
-            <a href="">Gestionar pedidos</a>
+            <a href="<?=base_url?>Pedido/gestion">Gestionar pedidos</a>
             <a href="<?=base_url?>Producto/gestion">Gestionar productos</a>
             <a href="<?=base_url?>Categoria/index">Gestionar categorias</a>
         <?php endif; ?>

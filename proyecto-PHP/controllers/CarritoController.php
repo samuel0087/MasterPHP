@@ -44,6 +44,40 @@ class CarritoController{
         header('Location:' . base_url . 'Carrito/index');
     }
 
+    public function up(){
+        if(isset($_GET['indice'])){
+            $index = $_GET['indice'];
+            $_SESSION['carrito'][$index]['cantidad']++;
+        }
+
+        header('Location:'.base_url.'Carrito/index');
+    }
+
+    public function down(){
+        if(isset($_GET['indice'])){
+            $index = $_GET['indice'];
+            $_SESSION['carrito'][$index]['cantidad']--;
+
+            if($_SESSION['carrito'][$index]['cantidad'] == 0){
+                unset($_SESSION['carrito'][$index]);
+            }
+
+        }
+
+        header('Location:'.base_url.'Carrito/index');
+    }
+
+    public function deleteOne(){
+        if(isset($_GET['indice'])){
+            $index = $_GET['indice'];
+            unset($_SESSION['carrito'][$index]);
+        }
+
+        header('Location:'.base_url.'Carrito/index');
+    }
+
+
+
     public function delete(){
         Utils::deleteSession('carrito');
         header('Location:' . base_url . 'Carrito/index');

@@ -163,6 +163,13 @@ class Pedido{
         return $result;
     }
 
+    public function edit(){
+        $sql = "UPDATE pedidos SET estado = '{$this->estado}' WHERE id={$this->id}; ";
+        $result = $this->db->query($sql);
+
+        return $result;
+    }
+
 
 
 }

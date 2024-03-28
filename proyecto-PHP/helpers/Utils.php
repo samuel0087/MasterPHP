@@ -52,4 +52,25 @@ class Utils{
 
         return $stats;
     }
+
+    public static function getEstado($estado){
+        $status = 'Pendiente';
+
+        switch($estado){
+            case 'Confirm':
+                $status = 'Pendiente';
+                break;
+            case 'Preparation':
+                $status = 'En preparacion';
+                break;
+            case 'Ready':
+                $status = 'Pedido listo';
+                break;
+            case 'Sended':
+                $status = 'Enviado';
+        }
+
+        return $status;
+
+    }
 }
